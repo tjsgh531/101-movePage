@@ -1,22 +1,27 @@
-const moveOther = document.getElementById('moveOther');
-const pageReload = document.getElementById('pageReload');
-const history = document.getElementById('history');
-const newPage = document.getElementById('newPage');
+class Main{
+    constructor(){
+        this.href = document.getElementById('moveOther');
+        this.reload = document.getElementById('pageReload');
+        this.history = document.getElementById('history');
+        this.open = document.getElementById('newPage');
+    
+        this.init();
+    }
 
-let time;
+    init(){
+        this.href.addEventListener('click',this.moveOther);
+    }
 
-const timer = setInterval((settingTime,object) => {
-    const date = new Date();
-    if(time == null){
-        return;
-    }   
-    const currentTime = Math.floor(date.getTime() - time.getTime());
-    object.textContext = `${settingTime - currentTime}후 변경됩니다.`;
-}, 500);
-
-function setTime(settingTime,object){
-    time = new Date();
-    timer(settingTime,object);
+    moveOther(){
+        console.log('실행 되는 겨?');
+        const ans= window.confirm("다른페이지로 이동합니다.");
+    
+        if(ans){
+            location.href = './otherPage.html';
+        }
+    }
 }
 
-setTime(5,moveOther);
+window.onload = () => {
+    new main();
+};
