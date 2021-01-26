@@ -1,48 +1,35 @@
 :root{
-    --start:rgb(252, 178, 178);
-    --end : rgb(148, 228, 145);
+    --start : rgb(123, 230, 81);
+    --middle : rgba(255, 255, 255, 0.938);
+    --end : rgb(241, 150, 237);
 }
-
 *{
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
+    outline: 0;
 }
-
 html,body{
     width: 100%;
     height: 100%;
 }
 body{
-    background-image: linear-gradient(90deg ,var(--start), var(--end));
+    background-image: linear-gradient(90deg,var(--start)3%,var(--middle),var(--end)97%);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
-main{
-    width: 80%;
-    height: 540px;
+div{
+    position: absolute;
 
-    display: grid;
-    grid-template: "first" 1fr "second" 1fr "third" 1fr "forth" 1fr /100% ;
-    gap: 10px;
-}
-main *{
-    width: 200px;
+    background-color: rgba(175, 235, 255, 0.8);
 
-    border: 1px solid black;
+    border: 2px solid white;
+    border-radius: 50%;
 
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
-    color: white;
-    text-shadow: 2px 2px 2px black;
     text-align: center;
 
-    box-sizing: border-box;
-    padding: 30px;
-
-    transition: width 1s;
-}
-main *:hover{
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
