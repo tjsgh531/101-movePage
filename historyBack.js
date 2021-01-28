@@ -1,17 +1,15 @@
-export class MovePage{
+export class HistoryBack{
     constructor(){
         this.isDisplayed = true;
         this.resize();
 
         this.element = document.createElement('div');
-        this.element.style.backgroundColor ='rgba(175, 235, 255, 0.7)';
-        this.element.textContent = '페이지 이동';
+        this.element.style.backgroundColor ='rgba(127, 255, 148, 0.7)';
+        this.element.textContent = '뒤로가기';
         document.body.appendChild(this.element);
         this.element.addEventListener('click',()=> {
-            const ans = window.confirm('다른페이지로 이동하실 건가요?');
-            if(ans){
-                location.href = './otherPage.html'
-            }
+            window.alert('뒤로간다!');
+            history.back();
         });
 
         this.radius = 80;

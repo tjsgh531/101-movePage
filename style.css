@@ -19,9 +19,6 @@ body{
 }
 div{
     position: absolute;
-
-    background-color: rgba(175, 235, 255, 0.8);
-
     border: 2px solid white;
     border-radius: 50%;
 
