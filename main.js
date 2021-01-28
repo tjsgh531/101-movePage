@@ -14,6 +14,10 @@ import{
     HistoryForward
 }from './historyForward.js';
 
+import{
+    NewPage
+}from './newPage.js';
+
 class Main{
     constructor(){
         this.bubbles = [];
@@ -49,7 +53,7 @@ class Main{
         let creatNum;
         this.randTime = Math.random().toFixed(2);
         setInterval(() => {
-            creatNum = Math.round(Math.random()*3);
+            creatNum = Math.round(Math.random()*4);
             if(this.bubbles.length < this.maxNum){
                 switch(creatNum){
                     case 0 :
@@ -66,6 +70,10 @@ class Main{
                         break;
                     case 3:
                         item = new HistoryForward();
+                        this.bubbles.push(item); 
+                        break;
+                    case 4:
+                        item = new NewPage();
                         this.bubbles.push(item); 
                         break;
                 }
